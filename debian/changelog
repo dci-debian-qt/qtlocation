@@ -4,6 +4,7 @@ qtlocation-opensource-src (5.5.0-0ubuntu1) UNRELEASED; urgency=medium
   * Update .install files.
   * Update symbols from build logs.
   * Rebase debian/patches/appSpecificTileCache.diff.
+  * Skip qmlinterface tests since they fail to use the module.
 
  -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Fri, 27 Mar 2015 07:03:26 +0000
 

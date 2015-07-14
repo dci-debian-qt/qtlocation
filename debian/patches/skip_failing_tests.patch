@@ -16,6 +16,15 @@ Last-Updated: 2014-01-08
             qplacemanager_unsupported \
             placesplugin_unsupported
  
+@@ -30,7 +30,7 @@
+            placesplugin_unsupported
+ 
+     #misc tests
+-    SUBDIRS +=  qmlinterface \
++    SUBDIRS += \
+            cmake \
+            doublevectors
+ 
 @@ -53,7 +52,6 @@
             qgeoroutexmlparser \
             qgeomapcontroller \
@@ -84,3 +93,4 @@ diff -urN qtlocation-opensource-src-5.2.0.old/tests/auto/qgeocoordinate/tst_qgeo
      }
  
      void atDistanceAndAzimuth()
+
