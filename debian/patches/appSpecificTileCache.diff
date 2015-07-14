@@ -1,0 +1,22 @@
+Description: Use app specific tile cache directory
+ Fix a problem in confined apps.
+ .
+Author: Christian Dywan <christian.dywan@canonical.com>
+Bug-Ubuntu: https://launchpad.net/bugs/1276658
+Forwarded: https://bugreports.qt-project.org/browse/QTBUG-41187
+Last-Updated: 2014-09-09
+
+
+=== modified file 'src/location/maps/qgeotilecache.cpp'
+--- a/src/location/maps/qgeotilecache.cpp	2014-09-08 10:48:22 +0000
++++ b/src/location/maps/qgeotilecache.cpp	2014-09-08 10:51:56 +0000
+@@ -116,8 +116,7 @@
+     // of course override them)
+ 
+     if (directory_.isEmpty()) {
+-        directory_ = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation)
+-                + QLatin1String("/QtLocation");
++        directory_ = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+         QDir::root().mkpath(directory_);
+     }
+ 
