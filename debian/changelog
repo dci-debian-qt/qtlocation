@@ -6,6 +6,7 @@ qtlocation-opensource-src (5.5.0-0ubuntu1) UNRELEASED; urgency=medium
   * Rebase debian/patches/appSpecificTileCache.diff.
   * Skip qmlinterface tests since they fail to use the module.
   * Build depend on libqt5xcbqpa5 to be able to run tests under xvfb.
+  * Bump build deps.
 
  -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Fri, 27 Mar 2015 07:03:26 +0000
 
