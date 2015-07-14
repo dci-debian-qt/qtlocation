@@ -1,9 +1,10 @@
-qtlocation-opensource-src (5.4.2-2) unstable; urgency=medium
+qtlocation-opensource-src (5.4.2-1ubuntu1) wily; urgency=medium
 
-  * Upload to unstable.
-  * Update symbols files with buildds' logs.
+  * New upstream release.
+  * Rename Debian's qtpositioning5-doc-html.links to 
+    qtlocation5-doc-html.links
 
- -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 24 Jun 2015 16:02:32 -0300
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Thu, 11 Jun 2015 13:54:39 +0000
 
 qtlocation-opensource-src (5.4.2-1) experimental; urgency=medium
 
@@ -12,6 +13,18 @@ qtlocation-opensource-src (5.4.2-1) experimental; urgency=medium
   * Expose HTML documentation (Closes: #751179).
 
  -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 03 Jun 2015 16:20:36 -0300
+
+qtlocation-opensource-src (5.4.1-1ubuntu1) vivid; urgency=medium
+
+  * New upstream release.
+  * Merge with Debian, remaining changes:
+    - Build the unreleased Qt Location module 
+    - Keep the examples/dbg/doc packages named "qtlocation" as per upstream
+    - debian/patches/appSpecificTileCache.diff
+    - Different test enablement
+    - Keep certain transitions until 16.04 LTS
+
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Wed, 11 Mar 2015 07:05:43 +0000
 
 qtlocation-opensource-src (5.4.1-1) experimental; urgency=medium
 
@@ -22,6 +35,21 @@ qtlocation-opensource-src (5.4.1-1) experimental; urgency=medium
     (closes: #778090).
 
  -- Dmitry Shachnev <mitya57@debian.org>  Thu, 05 Mar 2015 10:08:42 +0300
+
+qtlocation-opensource-src (5.4.0-1ubuntu1) vivid; urgency=medium
+
+  * New upstream release.
+  * Drop qt3d dependency, not needed anymore in Qt 5.4
+  * Bump dependencies.
+  * Update symbols.
+  * Merge with Debian, remaining changes:
+    - Build the unreleased Qt Location module 
+    - Keep the examples/dbg/doc packages named "qtlocation" as per upstream
+    - debian/patches/appSpecificTileCache.diff
+    - Different test enablement
+    - Keep certain transitions until 16.04 LTS
+
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Fri, 13 Feb 2015 06:46:54 +0000
 
 qtlocation-opensource-src (5.4.0-1) experimental; urgency=medium
 
@@ -34,6 +62,17 @@ qtlocation-opensource-src (5.4.0-1) experimental; urgency=medium
   * Bump Standards-Version to 3.9.6, no changes needed.
 
  -- Dmitry Shachnev <mitya57@debian.org>  Sat, 27 Dec 2014 16:33:21 +0300
+
+qtlocation-opensource-src (5.3.2-2ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+  * Merge with Debian 5.3.2-2, remaining changes:
+    - Build the unreleased Qt Location module 
+    - Keep the main packages named "qtlocation" as per upstream
+    - debian/patches/appSpecificTileCache.diff
+    - Different test enablement
+
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Tue, 28 Oct 2014 09:43:44 +0000
 
 qtlocation-opensource-src (5.3.2-2) unstable; urgency=medium
 
@@ -107,6 +146,56 @@ qtlocation-opensource-src (5.3.0-1) experimental; urgency=medium
   * Update debian/copyright.
 
  -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Thu, 29 May 2014 23:32:11 -0300
+
+qtlocation-opensource-src (5.3.0-0ubuntu4) utopic; urgency=medium
+
+  [ Christian Dywan ]
+  * Add debian/patches/appSpecificTileCache.diff (LP: #1276658)
+
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Tue, 09 Sep 2014 06:55:28 +0000
+
+qtlocation-opensource-src (5.3.0-0ubuntu3) utopic; urgency=medium
+
+  * No-change rebuild to get dbgsyms for all binaries onto
+    ddebs.ubuntu.com
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Thu, 24 Jul 2014 14:05:46 -0700
+
+qtlocation-opensource-src (5.3.0-0ubuntu2) utopic; urgency=medium
+
+  * debian/control: adding back 'or' dependency for the gles variant
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Thu, 19 Jun 2014 03:13:13 -0300
+
+qtlocation-opensource-src (5.3.0-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release
+    - Qt Location part is still not officially released, so applications may
+      need changes
+    - Qt Positioning should be fuly compatible with the previous version
+  * Move include files to the new path
+  * Use the new name for b-d, qml-module-qtquick2
+  * Refresh skip_failing_tests.patch 
+  * Update symbols
+
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Fri, 13 Jun 2014 08:10:07 +0000
+
+qtlocation-opensource-src (5.2.1-1ubuntu2) trusty; urgency=medium
+
+  * libqt5location5.symbols: adding dep alternatives for the version
+    compatible with OpenGLES (provided by another src pkg)
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Thu, 10 Apr 2014 16:13:54 -0300
+
+qtlocation-opensource-src (5.2.1-1ubuntu1) trusty; urgency=medium
+
+  * Merge with ‘location-packages’ branch of Debian packaging Git,
+    remaining changes:
+    - Add needed Breaks/Replaces fields.
+    - Make qtlocation5-dev depend on qtpositioning5-dev for this cycle.
+    - Use Ubuntu Vcs fields.
+
+ -- Dmitry Shachnev <mitya57@ubuntu.com>  Sun, 23 Mar 2014 13:56:16 +0400
 
 qtlocation-opensource-src (5.2.1-3) unstable; urgency=medium
 
