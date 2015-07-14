@@ -2,6 +2,7 @@ qtlocation-opensource-src (5.5.0-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release.
   * Update .install files.
+  * Update symbols from build logs.
 
  -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Fri, 27 Mar 2015 07:03:26 +0000
 
