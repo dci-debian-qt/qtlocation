@@ -7,16 +7,15 @@ Forwarded: https://bugreports.qt-project.org/browse/QTBUG-41187
 Last-Updated: 2014-09-09
 
 
-=== modified file 'src/location/maps/qgeotilecache.cpp'
---- a/src/location/maps/qgeotilecache.cpp	2014-09-08 10:48:22 +0000
-+++ b/src/location/maps/qgeotilecache.cpp	2014-09-08 10:51:56 +0000
-@@ -116,8 +116,7 @@
+--- qtlocation-opensource-src-5.5.0-alpha/src/location/maps/qgeotilecache.cpp.old	2015-03-16 16:19:00.000000000 +0000
++++ qtlocation-opensource-src-5.5.0-alpha/src/location/maps/qgeotilecache.cpp	2015-03-27 07:07:08.761722068 +0000
+@@ -104,8 +104,7 @@
+     // rather than in each individual plugin (the plugins can
      // of course override them)
  
-     if (directory_.isEmpty()) {
--        directory_ = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation)
--                + QLatin1String("/QtLocation");
-+        directory_ = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
-         QDir::root().mkpath(directory_);
-     }
+-    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation)
+-                 + QLatin1String("/QtLocation");
++    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
  
+     // delete old tiles from QtLocation 5.4 or prior
+     // TODO Remove cache cleanup in Qt 6
