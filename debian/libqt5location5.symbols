@@ -627,9 +627,6 @@ libQt5Location.so.5 libqt5location5 #MINVER# | libqt5location5-gles #MINVER#
  _ZN22QPlaceReplyUnsupported11qt_metacallEN11QMetaObject4CallEiPPv@Base 5.5.0
  _ZN22QPlaceReplyUnsupported11qt_metacastEPKc@Base 5.5.0
  _ZN22QPlaceReplyUnsupported16staticMetaObjectE@Base 5.5.0
- _ZN22QPlaceReplyUnsupportedD0Ev@Base 5.5.0
- _ZN22QPlaceReplyUnsupportedD1Ev@Base 5.5.0
- _ZN22QPlaceReplyUnsupportedD2Ev@Base 5.5.0
  _ZN23QGeoCodingManagerEngine11qt_metacallEN11QMetaObject4CallEiPPv@Base 5.2.1
  _ZN23QGeoCodingManagerEngine11qt_metacastEPKc@Base 5.2.1
  _ZN23QGeoCodingManagerEngine14reverseGeocodeERK14QGeoCoordinateRK9QGeoShape@Base 5.2.1
@@ -686,9 +683,6 @@ libQt5Location.so.5 libqt5location5 #MINVER# | libqt5location5-gles #MINVER#
  _ZN24QPlaceIdReplyUnsupported11qt_metacallEN11QMetaObject4CallEiPPv@Base 5.5.0
  _ZN24QPlaceIdReplyUnsupported11qt_metacastEPKc@Base 5.5.0
  _ZN24QPlaceIdReplyUnsupported16staticMetaObjectE@Base 5.5.0
- _ZN24QPlaceIdReplyUnsupportedD0Ev@Base 5.5.0
- _ZN24QPlaceIdReplyUnsupportedD1Ev@Base 5.5.0
- _ZN24QPlaceIdReplyUnsupportedD2Ev@Base 5.5.0
  _ZN26QPlaceProposedSearchResult16setSearchRequestERK19QPlaceSearchRequest@Base 5.2.1
  _ZN26QPlaceProposedSearchResultC1ERK18QPlaceSearchResult@Base 5.2.1
  _ZN26QPlaceProposedSearchResultC1Ev@Base 5.2.1
@@ -700,9 +694,6 @@ libQt5Location.so.5 libqt5location5 #MINVER# | libqt5location5-gles #MINVER#
  _ZN27QPlaceMatchReplyUnsupported11qt_metacallEN11QMetaObject4CallEiPPv@Base 5.5.0
  _ZN27QPlaceMatchReplyUnsupported11qt_metacastEPKc@Base 5.5.0
  _ZN27QPlaceMatchReplyUnsupported16staticMetaObjectE@Base 5.5.0
- _ZN27QPlaceMatchReplyUnsupportedD0Ev@Base 5.5.0
- _ZN27QPlaceMatchReplyUnsupportedD1Ev@Base 5.5.0
- _ZN27QPlaceMatchReplyUnsupportedD2Ev@Base 5.5.0
  _ZN27QPlaceSearchSuggestionReply11qt_metacallEN11QMetaObject4CallEiPPv@Base 5.2.1
  _ZN27QPlaceSearchSuggestionReply11qt_metacastEPKc@Base 5.2.1
  _ZN27QPlaceSearchSuggestionReply14setSuggestionsERK11QStringList@Base 5.2.1
@@ -715,9 +706,6 @@ libQt5Location.so.5 libqt5location5 #MINVER# | libqt5location5-gles #MINVER#
  _ZN28QPlaceSearchReplyUnsupported11qt_metacallEN11QMetaObject4CallEiPPv@Base 5.5.0
  _ZN28QPlaceSearchReplyUnsupported11qt_metacastEPKc@Base 5.5.0
  _ZN28QPlaceSearchReplyUnsupported16staticMetaObjectE@Base 5.5.0
- _ZN28QPlaceSearchReplyUnsupportedD0Ev@Base 5.5.0
- _ZN28QPlaceSearchReplyUnsupportedD1Ev@Base 5.5.0
- _ZN28QPlaceSearchReplyUnsupportedD2Ev@Base 5.5.0
  _ZN29QGeoTiledMappingManagerEngine11qt_metacallEN11QMetaObject4CallEiPPv@Base 5.2.1
  _ZN29QGeoTiledMappingManagerEngine11qt_metacastEPKc@Base 5.2.1
  _ZN29QGeoTiledMappingManagerEngine11registerMapEP7QGeoMap@Base 5.5.0
@@ -744,21 +732,12 @@ libQt5Location.so.5 libqt5location5 #MINVER# | libqt5location5-gles #MINVER#
  _ZN29QPlaceContentReplyUnsupported11qt_metacallEN11QMetaObject4CallEiPPv@Base 5.5.0
  _ZN29QPlaceContentReplyUnsupported11qt_metacastEPKc@Base 5.5.0
  _ZN29QPlaceContentReplyUnsupported16staticMetaObjectE@Base 5.5.0
- _ZN29QPlaceContentReplyUnsupportedD0Ev@Base 5.5.0
- _ZN29QPlaceContentReplyUnsupportedD1Ev@Base 5.5.0
- _ZN29QPlaceContentReplyUnsupportedD2Ev@Base 5.5.0
  _ZN29QPlaceDetailsReplyUnsupported11qt_metacallEN11QMetaObject4CallEiPPv@Base 5.5.0
  _ZN29QPlaceDetailsReplyUnsupported11qt_metacastEPKc@Base 5.5.0
  _ZN29QPlaceDetailsReplyUnsupported16staticMetaObjectE@Base 5.5.0
- _ZN29QPlaceDetailsReplyUnsupportedD0Ev@Base 5.5.0
- _ZN29QPlaceDetailsReplyUnsupportedD1Ev@Base 5.5.0
- _ZN29QPlaceDetailsReplyUnsupportedD2Ev@Base 5.5.0
  _ZN38QPlaceSearchSuggestionReplyUnsupported11qt_metacallEN11QMetaObject4CallEiPPv@Base 5.5.0
  _ZN38QPlaceSearchSuggestionReplyUnsupported11qt_metacastEPKc@Base 5.5.0
  _ZN38QPlaceSearchSuggestionReplyUnsupported16staticMetaObjectE@Base 5.5.0
- _ZN38QPlaceSearchSuggestionReplyUnsupportedD0Ev@Base 5.5.0
- _ZN38QPlaceSearchSuggestionReplyUnsupportedD1Ev@Base 5.5.0
- _ZN38QPlaceSearchSuggestionReplyUnsupportedD2Ev@Base 5.5.0
  _ZN6QPlace10setContentEN13QPlaceContent4TypeERK4QMapIiS0_E@Base 5.2.1
  _ZN6QPlace10setPlaceIdERK7QString@Base 5.2.1
  _ZN6QPlace10setRatingsERK13QPlaceRatings@Base 5.2.1
