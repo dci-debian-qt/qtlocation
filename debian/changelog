@@ -10,6 +10,28 @@ qtlocation-opensource-src (5.5.0-0ubuntu1) UNRELEASED; urgency=medium
 
  -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Fri, 27 Mar 2015 07:03:26 +0000
 
+qtlocation-opensource-src (5.5.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Rename the -doc, -dbg and -examples packages to match the source package
+    name, for consistency with other Qt 5 modules.
+  * Build new packages for qtlocation module.
+  * Drop disable_qtlocation.patch.
+  * Update install files for the new release.
+  * Bump Qt build-dependencies to 5.5.0.
+  * Update debian/copyright.
+  * Disable some failing tests for location module.
+  * Update symbols files.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Thu, 27 Aug 2015 22:46:28 +0300
+
+qtlocation-opensource-src (5.4.2-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * Update symbols files with buildds' logs.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 24 Jun 2015 16:02:32 -0300
+
 qtlocation-opensource-src (5.4.2-1ubuntu1) wily; urgency=medium
 
   * New upstream release.
