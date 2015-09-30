@@ -1,0 +1,50 @@
+From e9753c6cfd5a0a7fa1c73c19459b815c59a1d6dd Mon Sep 17 00:00:00 2001
+From: Laszlo Agocs <laszlo.agocs@theqtcompany.com>
+Date: Tue, 15 Sep 2015 14:59:07 +0200
+Subject: [PATCH] Check if GenericCacheLocation is writable before trusting it
+
+Enforced application isolation (AppArmor) may make it impossible to write
+to $HOME/.cache as applications are only allowed to use their own specific
+directories (as returned by CacheLocation). QtCore is not able to recognize
+this so the value returned for GenericCacheLocation is still non-empty in
+this case. Therefore do a write check.
+
+Task-number: QTBUG-41187
+Change-Id: I6ad136abc69997d25715dcdbbc1b8ffb55ec65e0
+Reviewed-by: Alberto Mardegan <mardy@users.sourceforge.net>
+Reviewed-by: Alex Blasche <alexander.blasche@theqtcompany.com>
+---
+ src/location/maps/qgeotilecache.cpp | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+diff --git a/src/location/maps/qgeotilecache.cpp b/src/location/maps/qgeotilecache.cpp
+index 3da2865..01cfcba 100644
+--- a/src/location/maps/qgeotilecache.cpp
++++ b/src/location/maps/qgeotilecache.cpp
+@@ -468,6 +468,23 @@ QString QGeoTileCache::baseCacheDirectory()
+     // If this is not supported by the platform, use the application-specific cache
+     // location. (e.g. ~/.cache/<app_name>/QtLocation)
+     dir = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation);
++
++    if (!dir.isEmpty()) {
++        // The shared cache may not be writable when application isolation is enforced.
++        static bool writable = false;
++        static bool writableChecked = false;
++        if (!writableChecked) {
++            writableChecked = true;
++            QDir::root().mkpath(dir);
++            QFile writeTestFile(QDir(dir).filePath(QStringLiteral("qt_cache_check")));
++            writable = writeTestFile.open(QIODevice::WriteOnly);
++            if (writable)
++                writeTestFile.remove();
++        }
++        if (!writable)
++            dir = QString();
++    }
++
+     if (dir.isEmpty())
+         dir = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+ 
+-- 
+2.5.0
+
