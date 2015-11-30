@@ -98,7 +98,7 @@ Depends: libqt5location5-plugins,
          ${shlibs:Depends},
 Breaks: qtdeclarative5-qtlocation-plugin (<< 5.3.2-2~)
 Replaces: qtdeclarative5-qtlocation-plugin (<< 5.3.2-2~)
-Description: Qt Location module - QML plugin
+Description: Qt Location QML module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
  .
@@ -167,6 +167,7 @@ Section: x11
 Pre-Depends: ${misc:Pre-Depends}
 Depends: libqt5location5-plugins (= ${binary:Version}),
          libqt5positioning5-plugins (= ${binary:Version}),
+         qml-module-qtlocation (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Breaks: qtpositioning5-examples (<< 5.5.0~)

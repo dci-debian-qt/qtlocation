@@ -40,10 +40,12 @@ override_dh_auto_install-indep:
 override_dh_install:
 	dh_install --fail-missing
 
-override_dh_auto_test:
+override_dh_auto_test-arch:
 ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))
 	xvfb-run -a -s '-screen 0 640x480x24' dh_auto_test -- QT_PLUGIN_PATH=$(CURDIR)/plugins LD_LIBRARY_PATH=$(CURDIR)/lib
 endif
+
+override_dh_auto_test-indep:
 
 override_dh_auto_clean:
 	dh_auto_clean
