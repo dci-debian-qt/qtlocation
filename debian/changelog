@@ -1,4 +1,4 @@
-qtlocation-opensource-src (5.5.1-1ubuntu1) UNRELEASED; urgency=medium
+qtlocation-opensource-src (5.5.1-3ubuntu1) xenial; urgency=medium
 
   * New upstream release.
   * Update .install files.
@@ -11,7 +11,7 @@ qtlocation-opensource-src (5.5.1-1ubuntu1) UNRELEASED; urgency=medium
     - Check-if-GenericCacheLocation-is-writable-before-tru.patch
     - Isolate-the-default-cache-directory.patch
 
- -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Fri, 27 Mar 2015 07:03:26 +0000
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Mon, 30 Nov 2015 12:48:15 +0000
 
 qtlocation-opensource-src (5.5.1-4) UNRELEASED; urgency=medium
 
