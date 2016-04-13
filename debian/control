@@ -13,7 +13,7 @@ Build-Depends: dbus,
                pkg-kde-tools,
                qml-module-qtquick2 (>= 5.6.0~),
                qtbase5-private-dev (>= 5.6.0+dfsg~),
-               qtdeclarative5-private-dev (>= 5.6.0~)
+               qtdeclarative5-private-dev (>= 5.6.0~),
                xauth,
                xvfb
 Build-Depends-Indep: libqt5sql5-sqlite (>= 5.6.0+dfsg~),
