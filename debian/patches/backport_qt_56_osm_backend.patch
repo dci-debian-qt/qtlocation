@@ -1,0 +1,86 @@
+diff --git a/src/plugins/geoservices/osm/osm.pro b/src/plugins/geoservices/osm/osm.pro
+index a00f1fb..e73c16d 100644
+--- a/src/plugins/geoservices/osm/osm.pro
++++ b/src/plugins/geoservices/osm/osm.pro
+@@ -1,9 +1,6 @@
+ TARGET = qtgeoservices_osm
+-QT += location-private positioning-private network
+ 
+-PLUGIN_TYPE = geoservices
+-PLUGIN_CLASS_NAME = QGeoServiceProviderFactoryOsm
+-load(qt_plugin)
++QT += location-private positioning-private network
+ 
+ HEADERS += \
+     qgeoserviceproviderpluginosm.h \
+@@ -37,3 +34,6 @@ SOURCES += \
+ OTHER_FILES += \
+     osm_plugin.json
+ 
++PLUGIN_TYPE = geoservices
++PLUGIN_CLASS_NAME = QGeoServiceProviderFactoryOsm
++load(qt_plugin)
+diff --git a/src/plugins/geoservices/osm/qgeomapreplyosm.cpp b/src/plugins/geoservices/osm/qgeomapreplyosm.cpp
+index b540683..d020716 100644
+--- a/src/plugins/geoservices/osm/qgeomapreplyosm.cpp
++++ b/src/plugins/geoservices/osm/qgeomapreplyosm.cpp
+@@ -75,7 +75,11 @@ void QGeoMapReplyOsm::networkReplyFinished()
+     QByteArray a = m_reply->readAll();
+ 
+     setMapImageData(a);
+-    setMapImageFormat("png");
++    int mapId = tileSpec().mapId();
++    if (mapId == 1 || mapId == 2)
++        setMapImageFormat(QStringLiteral("jpg"));
++    else
++        setMapImageFormat(QStringLiteral("png"));
+ 
+     setFinished(true);
+ 
+diff --git a/src/plugins/geoservices/osm/qgeoroutereplyosm.cpp b/src/plugins/geoservices/osm/qgeoroutereplyosm.cpp
+index bca345f..f704a71 100644
+--- a/src/plugins/geoservices/osm/qgeoroutereplyosm.cpp
++++ b/src/plugins/geoservices/osm/qgeoroutereplyosm.cpp
+@@ -344,10 +344,10 @@ void QGeoRouteReplyOsm::networkReplyFinished()
+         int status = object.value(QStringLiteral("status")).toDouble();
+         QString statusMessage = object.value(QStringLiteral("status_message")).toString();
+ 
+-        // status code is 0 in case of success
++        // status code 0 or 200 are case of success
+         // status code is 207 if no route was found
+         // an error occurred when trying to find a route
+-        if (0 != status) {
++        if (0 != status && 200 != status) {
+             setError(QGeoRouteReply::UnknownError, statusMessage);
+             m_reply->deleteLater();
+             m_reply = 0;
+diff --git a/src/plugins/geoservices/osm/qgeotilefetcherosm.cpp b/src/plugins/geoservices/osm/qgeotilefetcherosm.cpp
+index 95a4355..9d2a83f 100644
+--- a/src/plugins/geoservices/osm/qgeotilefetcherosm.cpp
++++ b/src/plugins/geoservices/osm/qgeotilefetcherosm.cpp
+@@ -62,13 +62,16 @@ QGeoTiledMapReply *QGeoTileFetcherOsm::getTileImage(const QGeoTileSpec &spec)
+     request.setRawHeader("User-Agent", m_userAgent);
+ 
+     QString urlPrefix;
++    QString suffix = QStringLiteral(".png");
+ 
+     switch (spec.mapId()) {
+     case 1:
+         urlPrefix = QStringLiteral("http://otile1.mqcdn.com/tiles/1.0.0/map/");
++        suffix = QStringLiteral(".jpg");
+         break;
+     case 2:
+         urlPrefix = QStringLiteral("http://otile1.mqcdn.com/tiles/1.0.0/sat/");
++        suffix = QStringLiteral(".jpg");
+         break;
+     case 3:
+         urlPrefix = QStringLiteral("http://a.tile.thunderforest.com/cycle/");
+@@ -94,7 +97,7 @@ QGeoTiledMapReply *QGeoTileFetcherOsm::getTileImage(const QGeoTileSpec &spec)
+ 
+     request.setUrl(QUrl(urlPrefix + QString::number(spec.zoom()) + QLatin1Char('/') +
+                         QString::number(spec.x()) + QLatin1Char('/') +
+-                        QString::number(spec.y()) + QStringLiteral(".png")));
++                        QString::number(spec.y()) + suffix));
+ 
+     QNetworkReply *reply = m_networkManager->get(request);
+ 
