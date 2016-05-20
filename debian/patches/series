@@ -1,3 +1,4 @@
 # Ubuntu specific patches
 disable_failing_tests.patch
 disable_qgeocircle_extendShape_tests.patch
+backport_qt_56_osm_backend.patch
