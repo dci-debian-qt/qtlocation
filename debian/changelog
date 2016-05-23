@@ -1,3 +1,9 @@
+qtlocation-opensource-src (5.5.1-3ubuntu3) yakkety; urgency=medium
+
+  * Rebuild for arm64 gles switch.
+
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Mon, 23 May 2016 06:38:44 +0000
+
 qtlocation-opensource-src (5.5.1-3ubuntu2) xenial; urgency=medium
 
   * debian/patches/backport_qt_56_osm_backend.patch:
