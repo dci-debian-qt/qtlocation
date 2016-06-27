@@ -1,3 +1,20 @@
+qtlocation-opensource-src (5.6.1-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 13 Jun 2016 11:01:43 -0300
+
+qtlocation-opensource-src (5.6.1-1) experimental; urgency=medium
+
+  * New upstream release.
+    - Bump Qt build dependencies.
+  * Bump Standards-Version to 3.9.8, no changes required.
+  * Remove libgconf2-dev from build dependencies. It was used for the gipsy
+    plugin, which is long go.
+  * Update install files, one example was removed.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sat, 11 Jun 2016 22:24:09 -0300
+
 qtlocation-opensource-src (5.6.0-1) experimental; urgency=medium
 
   [ Lisandro Damián Nicanor Pérez Meyer ]
