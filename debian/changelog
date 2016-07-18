@@ -1,6 +1,6 @@
 qtlocation-opensource-src (5.6.0-1ubuntu1) UNRELEASED; urgency=medium
 
-  * New upstream release.
+  * New upstream release. (LP: #1202917)
   * Drop patches merged to Qt 5.6:
     - debian/patches/Isolate-the-default-cache-directory.patch
     - debian/patches/Check-if-GenericCacheLocation-is-writable-before-tru.patch
