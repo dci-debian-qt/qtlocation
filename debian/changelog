@@ -1,3 +1,9 @@
+qtlocation-opensource-src (5.6.2-0ubuntu1) UNRELEASED; urgency=medium
+
+  * New upstream LTS release.
+
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Wed, 04 Jan 2017 06:50:24 +0000
+
 qtlocation-opensource-src (5.6.1-2) unstable; urgency=medium
 
   * Upload to unstable.
