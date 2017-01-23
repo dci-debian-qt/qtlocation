@@ -6,14 +6,14 @@ Uploaders: Timo Jyrinki <timo@debian.org>,
            Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>,
            Dmitry Shachnev <mitya57@debian.org>
 Build-Depends: dbus,
-               debhelper (>= 9.0.0),
-               libqt5opengl5-dev (>= 5.6.1+dfsg~),
+               debhelper (>= 9.20160114~),
+               libqt5opengl5-dev (>= 5.7.1+dfsg~),
                pkg-kde-tools,
-               qtbase5-private-dev (>= 5.6.1+dfsg~),
-               qtdeclarative5-private-dev (>= 5.6.1~)
-Build-Depends-Indep: libqt5sql5-sqlite (>= 5.6.1+dfsg~),
-                     qtbase5-doc-html (>= 5.6.1+dfsg~),
-                     qttools5-dev-tools (>= 5.6.1~)
+               qtbase5-private-dev (>= 5.7.1+dfsg~),
+               qtdeclarative5-private-dev (>= 5.7.1~20161021~)
+Build-Depends-Indep: libqt5sql5-sqlite (>= 5.7.1+dfsg~),
+                     qtbase5-doc-html (>= 5.7.1+dfsg~),
+                     qttools5-dev-tools (>= 5.7.1~20161021~)
 Standards-Version: 3.9.8
 Homepage: http://qt-project.org/
 Vcs-Git: https://anonscm.debian.org/git/pkg-kde/qt/qtlocation.git
@@ -88,8 +88,6 @@ Pre-Depends: ${misc:Pre-Depends}
 Depends: libqt5positioning5-plugins (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Breaks: qtdeclarative5-qtpositioning-plugin (<< 5.2.1-3~)
-Replaces: qtdeclarative5-qtpositioning-plugin (<< 5.2.1-3~)
 Description: Qt Positioning QML module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -152,35 +150,6 @@ Architecture: all
 Section: oldlibs
 Depends: qtlocation5-examples, ${misc:Depends}
 Description: transitional dummy package for qtlocation5-examples
- Qt is a cross-platform C++ application framework. Qt's primary feature
- is its rich set of widgets that provide standard GUI functionality.
- .
- This is a transitional dummy package which can be safely removed.
-
-Package: qtlocation5-dbg
-Priority: extra
-Architecture: any
-Multi-Arch: same
-Section: debug
-Depends: libqt5location5 (= ${binary:Version}),
-         libqt5positioning5 (= ${binary:Version}),
-         ${misc:Depends}
-Recommends: qtbase5-dbg, qtdeclarative5-dbg
-Breaks: qtpositioning5-dbg (<< 5.5.0~)
-Replaces: qtpositioning5-dbg (<< 5.5.0~)
-Description: Qt Location library debugging symbols
- Qt is a cross-platform C++ application framework. Qt's primary feature
- is its rich set of widgets that provide standard GUI functionality.
- .
- This package contains the debugging symbols for the Qt 5 Location
- and Positioning libraries.
-
-Package: qtpositioning5-dbg
-Priority: extra
-Architecture: all
-Section: oldlibs
-Depends: qtlocation5-dbg, ${misc:Depends}
-Description: transitional dummy package for qtlocation5-dbg
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
  .

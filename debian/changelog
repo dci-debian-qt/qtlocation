@@ -1,8 +1,47 @@
-qtlocation-opensource-src (5.7.0-0neon) xenial; urgency=medium
+qtlocation-opensource-src (5.7.1-1) unstable; urgency=medium
 
-  * New release
+  * New upstream stable release.
+  * Ignore the tests results rather than completely disable them.
+  * Bump qtbase build-dependencies to 5.7.1 final.
+  * Update debian/copyright.
+  * Update libqt5location5.symbols from the current amd64 build log.
+  * Replace 5.7.1~20161021 with 5.7.1 in libqt5location5.symbols.
 
- -- Neon CI <neon@kde.org>  Mon, 27 Jun 2016 15:04:19 +0200
+ -- Dmitry Shachnev <mitya57@debian.org>  Fri, 16 Dec 2016 21:07:41 +0300
+
+qtlocation-opensource-src (5.7.1~20161021-3) unstable; urgency=medium
+
+  * Disable tests during the transition. We have a couple of flaky tests
+    on mips*, sometimes they work sometimes they don't. This will be further
+    investigated.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Thu, 03 Nov 2016 15:47:06 -0300
+
+qtlocation-opensource-src (5.7.1~20161021-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 01 Nov 2016 16:26:52 +0300
+
+qtlocation-opensource-src (5.7.1~20161021-1) experimental; urgency=medium
+
+  * New upstream snapshot.
+    - Bump Qt build dependencies.
+  * Update symbols files with current build log.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 26 Oct 2016 09:52:23 -0300
+
+qtlocation-opensource-src (5.7.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Refresh disable_failing_tests.patch.
+  * Bump Qt build-dependencies to 5.7.0.
+  * Update debian/copyright.
+  * Migrate to automatic dbgsym packages.
+  * Update symbols files from amd64 build log.
+  * Drop obsolete Breaks/Replaces.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Thu, 14 Jul 2016 23:08:44 +0300
 
 qtlocation-opensource-src (5.6.1-2) unstable; urgency=medium
 
