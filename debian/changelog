@@ -1,3 +1,9 @@
+qtlocation-opensource-src (5.9.0-0neon) UNRELEASED; urgency=medium
+
+  * New release
+
+ -- Jonathan Riddell <jr@jriddell.org>  Mon, 05 Jun 2017 15:57:41 +0100
+
 qtlocation-opensource-src (5.7.1-1) unstable; urgency=medium
 
   * New upstream stable release.
