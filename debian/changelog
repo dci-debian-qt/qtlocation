@@ -1,8 +1,25 @@
-qtlocation-opensource-src (5.9.0-0neon) UNRELEASED; urgency=medium
+qtlocation-opensource-src (5.9.0+dfsg-2) experimental; urgency=medium
 
-  * New release
+  * Drop fix_qtdeclarative_private_code.patch, it was only needed with
+    qtdeclarative 5.9.0 beta 3.
 
- -- Jonathan Riddell <jr@jriddell.org>  Mon, 05 Jun 2017 15:57:41 +0100
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 20 Jun 2017 13:31:29 +0300
+
+qtlocation-opensource-src (5.9.0+dfsg-1) experimental; urgency=medium
+
+  [ Simon Quigley ]
+  * New upstream release.
+  * Add myself to Uploaders.
+  * Add libicu-dev and zlib1g-dev to build dependencies as they are now
+    used by upstream.
+  * Install new upstream files.
+
+  [ Dmitry Shachnev ]
+  * Remove src/3rdparty/mapbox-gl-native from the tarball. It helps us
+    reduce source size from 57M to 3.2M and solve many copyright issues.
+    Because of #855464, use custom code in debian/rules to do that.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 16 Jun 2017 02:51:53 -0500
 
 qtlocation-opensource-src (5.7.1-1) unstable; urgency=medium
 
