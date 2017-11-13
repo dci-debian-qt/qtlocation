@@ -3,16 +3,15 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
 export CFLAGS := $(shell dpkg-buildflags --get CFLAGS) $(shell dpkg-buildflags --get CPPFLAGS)
 export CXXFLAGS := $(shell dpkg-buildflags --get CXXFLAGS) $(shell dpkg-buildflags --get CPPFLAGS)
 export LDFLAGS := $(shell dpkg-buildflags --get LDFLAGS) -Wl,--as-needed
 export QT_SELECT := qt5
 
-DEBIAN_VERSION = $(shell dpkg-parsechangelog -Sversion)
-UPSTREAM_VERSION = $(firstword $(subst +, ,$(DEBIAN_VERSION)))
-
 %:
-	dh $@ --parallel --with pkgkde_symbolshelper
+	dh $@ --with pkgkde_symbolshelper
 
 override_dh_auto_configure:
 	qmake QT_BUILD_PARTS+=tests
@@ -40,12 +39,15 @@ override_dh_auto_install-arch:
 override_dh_auto_install-indep:
 	make INSTALL_ROOT=$(CURDIR)/debian/tmp install_docs
 
-override_dh_install:
-	dh_install --fail-missing
+override_dh_missing:
+	dh_missing --fail-missing
 
 override_dh_auto_test-arch:
+	$(MAKE) install -Csrc/imports INSTALL_ROOT=$(CURDIR)/test_root
 	# Disable tests for the migration,we have a couple of flaky ones on mips*.
-	-dbus-run-session -- dh_auto_test -- QT_QPA_PLATFORM=minimal
+	-xvfb-run -a -s "-screen 0 1024x768x24 +extension RANDR +extension RENDER +extension GLX" \
+		dh_auto_test -- -Ctests/auto HOME=$(CURDIR)/test_home QT_LOGGING_RULES="default.debug=true" \
+		QML2_IMPORT_PATH=$(CURDIR)/test_root/usr/lib/$(DEB_HOST_MULTIARCH)/qt5/qml
 
 override_dh_auto_test-indep:
 
@@ -66,14 +68,7 @@ override_dh_auto_clean:
 	# Some other leftover binaries
 	rm -fv config.tests/geoclue/geoclue
 
+	rm -rf test_root test_home
+
 override_dh_strip:
 	dh_strip --dbgsym-migration='qtlocation5-dbg (<< 5.7.0-1~), qtpositioning5-dbg (<< 5.5.0-1~)'
-
-get-orig-source:
-	uscan --noconf --download-current-version --no-symlink
-	cd ..; rm -rf qtlocation-opensource-src-$(UPSTREAM_VERSION)
-	cd ..; tar xJf qtlocation-opensource-src-$(UPSTREAM_VERSION).tar.xz
-	rm -rf ../qtlocation-opensource-src-$(UPSTREAM_VERSION)/src/3rdparty/mapbox-gl-native/
-	cd ../qtlocation-opensource-src-$(UPSTREAM_VERSION)/src; touch -r imports 3rdparty
-	cd ..; tar --sort=name -cJf qtlocation-opensource-src_$(UPSTREAM_VERSION)+dfsg.orig.tar.xz \
-		--owner=root --group=root --mode=a+rX qtlocation-opensource-src-$(UPSTREAM_VERSION)/

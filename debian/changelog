@@ -1,16 +1,44 @@
-qtlocation-opensource-src (5.9.2+dfsg-0neon) UNRELEASED; urgency=medium
+qtlocation-opensource-src (5.9.2+dfsg-2) unstable; urgency=medium
 
-  [ Dmitry Shachnev ]
+  * Upload to unstable.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Thu, 26 Oct 2017 23:55:51 +0300
+
+qtlocation-opensource-src (5.9.2+dfsg-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Bump Qt build-dependencies to 5.9.2.
+  * Use Files-Excluded instead of custom repacking code.
+  * Update debian/copyright.
+  * Install new header qtlocation-config.h in qtlocation5-dev.
+  * Update debian/libqt5location5.symbols from the current build log.
+  * Use debhelper compat level 10 and dh_missing.
+  * Bump Standards-Version to 4.1.1, stop using deprecated Priority:
+    extra.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 15 Oct 2017 14:49:49 +0300
+
+qtlocation-opensource-src (5.9.1+dfsg-2) unstable; urgency=medium
+
+  * Release to unstable.
+  * Update symbols files with buildds' logs.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 16 Aug 2017 11:41:44 -0300
+
+qtlocation-opensource-src (5.9.1+dfsg-1) experimental; urgency=medium
+
   * New upstream release.
   * Bump Qt build-dependencies to 5.9.1.
   * Refresh disable_failing_tests.patch.
   * Drop the transitional packages. They are already transitional in
     the current Debian stable and Ubuntu LTS releases.
+  * Update libqt5location5.symbols from the current build log.
+  * Run all tests in Xvfb, drop disable_failing_tests.patch.
+    - Add build-dependencies on xauth, xvfb and qml-module-qttest.
+  * Bump Standards-Version to 4.0.0, no changes needed.
+  * Simplify and speed up get-orig-source code by using pipes.
 
-  [ Jonathan Riddell ]
-  * New release
-
- -- Jonathan Riddell <jr@jriddell.org>  Fri, 10 Nov 2017 11:41:40 +0000
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 04 Jul 2017 00:25:47 +0300
 
 qtlocation-opensource-src (5.9.0+dfsg-2) experimental; urgency=medium
 
